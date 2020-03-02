@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class UserController {
 
     // 用户通过localhost:8091/findAll获取用户数
     @RequestMapping("/findAll")
-    public String  findAll(Model model) {
+    public String findAll(Model model) {
         List<User> userList = userService.findAll();
         // model底层将数据保存到了request域中
         model.addAttribute("userList", userList);

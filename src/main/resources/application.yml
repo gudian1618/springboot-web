@@ -1,10 +1,16 @@
 server:
-  port: 8091
+  port: 8092
   servlet:
     context-path: /
 
 # 整合spring数据源
 spring:
+  # 配置mvc的页面 注意层级结构对应关系
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+
   datasource:
     # 引入druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
@@ -13,16 +19,10 @@ spring:
     username: root
     password: 123456
 
-  # 配置mvc的页面 注意层级结构对应关系
-  mvc:
-    view:
-      prefix: /WEB-INF/
-      suffix: .jsp
-
 # 整合mybatis或者mybatis-plus,只有名称改变,里面具体配置完全一致
 mybatis-plus:
   # 配置别名包
-  type-aliases-package: com.github.gudian1618.pojo
+#  type-aliases-package: com.github.gudian1618.springbootwebjsp.pojo
   # 配置mapper映射文件
 #  mapper-locations: classpath:/mybatis/mappers/*.xml
   # 开启驼峰映射规则,则可以自动的实现对象的赋值
@@ -32,5 +32,5 @@ mybatis-plus:
 # 添加日志输出
 logging:
   level:
-    com.github.gudian1618.springbootmybatis: debug
+    com.github.gudian1618.springbootwebjsp: debug
 
