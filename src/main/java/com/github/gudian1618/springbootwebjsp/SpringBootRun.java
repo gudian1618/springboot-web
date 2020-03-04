@@ -12,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 // 为mapper接口创建代理对象
-
 @MapperScan("com.github.gudian1618.springbootwebjsp.mapper")
 public class SpringBootRun {
 
